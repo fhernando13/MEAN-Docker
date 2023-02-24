@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const user = process.env.USER || 'user';
+const user = process.env.USERDB || 'user';
 const pass = process.env.PASS || 'password';
 const host = process.env.HOST || 'host';
 const port = process.env.PORT || 12345;
