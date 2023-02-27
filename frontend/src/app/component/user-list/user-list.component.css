@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+ }
+.mat-icon { 
+  font-size: 24px; 
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-tel-input-element {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  font: inherit;
+  text-align: center;
+}
+
+#xls{
+  text-align: right;
+}
+
+#xls button{
+  margin: 2px;  
+}
+
+

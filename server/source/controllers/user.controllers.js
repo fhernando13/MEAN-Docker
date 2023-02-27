@@ -20,7 +20,7 @@ userCtrl.createUser = async (req, res) => {
         console.log("User created");
         return res.status(200).send('User created successfull');
     }catch{
-        console.log("Error: ", error);
+        console.log("Error");
         return res.status(404).send("Error")
         }
 };
@@ -29,7 +29,7 @@ userCtrl.getOneUser = async (req, res) => {
     try{
         const user = await User.findById(req.params.id)
         console.log(user)
-        return res.status(200).send('getting one user: '+user);
+        return res.status(200).send(user);
     }catch{
         console.log("Error: ",err);
         return res.status(404).send("User not exist");

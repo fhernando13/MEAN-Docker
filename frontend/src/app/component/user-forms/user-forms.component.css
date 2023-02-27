@@ -1,0 +1,29 @@
+.example-full-width {
+    width: 100%;
+  }
+
+.card{
+    padding: 3px;
+}
+
+#home{
+    text-align: right;
+}
+
+#icon{
+    font-size: 20px;
+    text-align: justify;
+}
+
+.example-tel-input-element {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  font: inherit;
+  text-align: center;
+}
+
+h1{
+    text-align: center;
+}

@@ -1,0 +1,121 @@
+<div class="container">
+    <div class="col-12 pt-1" id="home">
+        <button mat-raised-button color="primary" matTooltip="Back to home" (click)="backToHome()">
+            Home
+        </button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 pt-1">
+            <!-- Form -->
+            <!--  -->
+            <form [formGroup]="userForm" (ngSubmit)="buttonSave()">
+                              
+                <!-- startcard -->
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                        <mat-card-title >{{title | uppercase}}</mat-card-title>
+                        </mat-card-header>
+                        <hr>
+                    <div class="container" >  
+                        <div class="row">
+                            <div class="col-md-6">                        
+                                <!-- Name -->
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Name</mat-label>
+                                    <input type="text" matInput formControlName="name" placeholder="Add name">
+                                    <!-- Validation -->
+                                    <mat-error *ngIf="name.hasError('required')">
+                                        Name is <strong>required</strong>                                         
+                                    </mat-error> 
+                                    <mat-error *ngIf="name.hasError('minlength')">
+                                        Name must be at least <strong>3 characters</strong> long.
+                                    </mat-error>                                                                       
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Lastname -->
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Lastname</mat-label>
+                                    <input type="text" matInput formControlName="lastname" placeholder="Add lastname">
+                                    <!-- Validations -->                            
+                                    <mat-error *ngIf="lastname.hasError('required')">
+                                        Lastame is <strong>required</strong>                                         
+                                    </mat-error> 
+                                    <mat-error *ngIf="lastname.hasError('minlength')">
+                                        Lastame must be at least <strong>4 characters</strong> long.
+                                    </mat-error>  
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <!-- Age -->
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Age</mat-label>
+                                    <input type="text" matInput formControlName="age">                                    
+                                    <!-- Validations -->                            
+                                    <mat-error *ngIf="age.hasError('required')">
+                                        Age is <strong>required</strong> 
+                                    </mat-error>
+                                    <mat-error *ngIf="age.hasError('min')">
+                                        Min age 18
+                                    </mat-error> 
+                                    <mat-error *ngIf="age.hasError('max')">
+                                        Max age 60
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            
+                            <div class="col-md-5">
+                                <!-- Phone -->
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Phone</mat-label>
+                                    <input type="text" matInput formControlName="phone" placeholder="Add phone">
+                                    <mat-icon matSuffix color="primary">phone</mat-icon>
+                                    <!-- Validations -->                            
+                                    <mat-error *ngIf="phone.hasError('required')">
+                                        Number phone is <strong>required</strong> 
+                                    </mat-error>
+                                    <mat-error *ngIf="phone.hasError('minlength')">                                        
+                                        The phone number must not have less than 10 digits
+                                    </mat-error> 
+                                    <mat-error *ngIf="phone.hasError('maxlength')">                                        
+                                        The phone number must not have more than 10 digits
+                                    </mat-error> 
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-md-5">
+                                <!-- Email -->
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Email</mat-label>
+                                    <input type="email" matInput formControlName="email" placeholder="Add email">
+                                    <mat-icon matSuffix color="primary">email</mat-icon>
+                                    <!-- Validations -->                            
+                                    <mat-error *ngIf="email.hasError('required')">
+                                        Address email is <strong>required</strong> 
+                                    </mat-error>                                   
+                                </mat-form-field>                                                
+                            </div>
+
+                        </div>                                                                            
+
+                        <mat-card-actions>
+                            <button 
+                            mat-raised-button 
+                            color="accent"
+                            matTooltip="Save the user"
+                            [disabled]="!userForm.valid"
+                            >{{button|uppercase}}</button>
+                        </mat-card-actions>
+                    </div>     
+                    </mat-card>
+                <!-- end card -->
+                                                                             
+            </form>
+            
+        </div>
+    </div>
+</div>

@@ -1,4 +1,83 @@
 <div class="container">
-    <p>This is the list of user!</p>
+
+    <div class="row">
+        <div class="div" id="xls">
+            <button mat-raised-button color="primary" matTooltip="Add new user" routerLink="/users/add">Add user</button>
+            <button mat-raised-button color="accent" matTooltip="Download the table">Download</button>
+        </div>
+                   
+        <div class="col-md-12">
+            <!-- Table -->
+            <mat-card>
+
+                <mat-card-header>
+                    <mat-card-title>{{title|uppercase}}</mat-card-title>                    
+                </mat-card-header>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                                    
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef> Name </th>
+                      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+                  
+                    <!-- Lastname Column -->
+                    <ng-container matColumnDef="lastname">
+                      <th mat-header-cell *matHeaderCellDef> Lastname </th>
+                      <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+                    </ng-container>
+                  
+                    <!-- Age Column -->
+                    <ng-container matColumnDef="age">
+                      <th mat-header-cell *matHeaderCellDef> Age </th>
+                      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+                    </ng-container>
+
+                    <!-- Email -->
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef> Email </th>
+                        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                    </ng-container>
+
+                    <!-- Phone -->
+                    <ng-container matColumnDef="phone">
+                        <th mat-header-cell *matHeaderCellDef> Phone </th>
+                        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+                    </ng-container>
+
+                    <!-- Buttons -->
+
+                    <ng-container matColumnDef="edit">
+                        <th mat-header-cell *matHeaderCellDef>  </th>
+                        <td mat-cell *matCellDef="let element"> 
+                            <button 
+                            mat-mini-fab 
+                            color="primary"
+                            matTooltip="Edit this user"
+                            [routerLink]="['/users/update', element._id]"
+                            ><mat-icon>edit</mat-icon>
+                            </button>
+                            <button 
+                            mat-mini-fab 
+                            color="warn"
+                            matTooltip="Delete this user"
+                            (click)="askDelete(element._id)"
+                            ><mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+                                     
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+
+                    <mat-paginator [pageSizeOptions]="[5, 10]"
+                                   showFirstLastButtons
+                                   aria-label="Select page of periodic elements">
+                    </mat-paginator>
+            </mat-card>
+        </div>
+    </div>
 </div>
+
 
