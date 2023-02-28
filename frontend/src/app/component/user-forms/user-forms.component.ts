@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 @Component({
   selector: 'app-user-forms',
   templateUrl: './user-forms.component.html',
-  styleUrls: ['./user-forms.component.css']
+  styleUrls: ['./user-forms.component.scss']
 })
 export class UserFormsComponent implements OnInit{
   private emailPattern: any =

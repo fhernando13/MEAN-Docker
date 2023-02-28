@@ -4,7 +4,11 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './component/navigation/navigation.component';
+import { UserFormsComponent } from './component/user-forms/user-forms.component';
+import { UserListComponent } from './component/user-list/user-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Angular Material
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -18,41 +22,38 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
-import { UserListComponent } from './component/user-list/user-list.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserFormsComponent } from './component/user-forms/user-forms.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    UserListComponent,
-    UserFormsComponent
+    UserFormsComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
     MatCardModule,
     MatTableModule,
     MatPaginatorModule,
     MatButtonModule,
     MatIconModule,
-    MatFormFieldModule,
     MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
     MatTooltipModule,
     MatMenuModule,
     MatToolbarModule,
     MatDialogModule,
+    MatSlideToggleModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [
-
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
